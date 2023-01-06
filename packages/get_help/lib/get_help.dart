@@ -5,7 +5,6 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:get/get.dart';
 
 part 'get_builder_view.dart';
-part 'get_builder_hook_view.dart';
 part 'get_hook_view.dart';
 part 'getx_future_controller.dart';
 
