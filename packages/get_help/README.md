@@ -22,7 +22,7 @@ class MyView extends GetBuilderView<MyController> {
 ```
 
 **IMPORTANT:**
-This widgets expects that you have already initialised your controller using a binding.
+This widget expects that you have already initialised your controller using a binding.
 If you are not using bindings or you don't need global controller creation, add the init method to your [GetBuilderView].
 
 You can also define the get builder to initialise local controllers by setting the [global] property to false, just the same as the [GetBuilder] widget.
@@ -78,8 +78,9 @@ Do you like flutter hooks? Well I do! It may well not be seen as best practice t
 
 ## Additional information
 
-TODO: Tell users more about the package: where to find more information, how to
+> TODO: Tell users more about the package: where to find more information, how to
 contribute to the package, how to file issues, what response they can expect
 from the package authors, and more.
 
-If you actually do need help, I highly suggest you check out [checkpointorg.com](https://checkpointorg.com/global/) for more information about people and organisations in your area you can talk to. Your mental health is important. ❤️
+
+If you do need someone to talk to about your mental health, I highly recommend you check out [checkpointorg.com](https://checkpointorg.com/global/) for more information about people and organisations in your area you can talk to. Your mental health is important. ❤️
