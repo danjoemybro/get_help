@@ -1,4 +1,4 @@
-part of 'get_help.dart';
+part of 'get_hooks.dart';
 
 /// A GetView widget with the ability to use hooks from the
 /// [flutter_hooks](https://pub.dev/packages/flutter_hooks) package.

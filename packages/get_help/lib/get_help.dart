@@ -1,11 +1,9 @@
 library get_help;
 
 import 'package:flutter/material.dart';
-import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:get/get.dart';
 
 part 'get_builder_view.dart';
-part 'get_hook_view.dart';
 part 'getx_future_controller.dart';
 
 // class _HomeController extends GetxFutureController {
