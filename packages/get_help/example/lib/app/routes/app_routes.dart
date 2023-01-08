@@ -4,9 +4,17 @@ part of 'app_pages.dart';
 abstract class Routes {
   Routes._();
   static const HOME = _Paths.HOME;
+  static const REACTIVE = _Paths.REACTIVE;
+  static const PRIMARY = _Paths.REACTIVE + _Paths.PRIMARY;
+  static const SECONDARY = _Paths.REACTIVE + _Paths.SECONDARY;
+  static const FUTURE = _Paths.FUTURE;
 }
 
 abstract class _Paths {
   _Paths._();
   static const HOME = '/home';
+  static const REACTIVE = '/reactive';
+  static const PRIMARY = '/primary';
+  static const SECONDARY = '/secondary';
+  static const FUTURE = '/future';
 }

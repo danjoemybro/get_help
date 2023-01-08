@@ -9,6 +9,8 @@ class HomeView extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton:
+          FloatingActionButton(onPressed: controller.onButtonPressed),
       appBar: AppBar(
         title: const Text('HomeView'),
         centerTitle: true,

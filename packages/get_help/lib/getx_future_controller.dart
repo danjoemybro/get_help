@@ -28,7 +28,7 @@ part of 'get_help.dart';
 /// ),
 /// ```
 abstract class GetxFutureController extends GetxController {
-  bool _isBusy = false;
+  bool _isBusy = true;
 
   /// The [isBusy] bool defaults to false but will show as true when awaiting
   /// the [futureToRun] function to complete. Once completed, this will simply
@@ -50,7 +50,7 @@ abstract class GetxFutureController extends GetxController {
   bool get isBusy => _isBusy;
 
   /// Toggle Busy!
-  void toggleBusy([bool? isBusy]) {
+  void setBusy([bool? isBusy]) {
     _isBusy = isBusy ?? _isBusy;
     update();
   }

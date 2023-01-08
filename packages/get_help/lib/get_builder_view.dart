@@ -54,7 +54,7 @@ abstract class GetBuilderView<T extends GetxController> extends GetView<T> {
   /// or GetBuilder widget, return null and no new controller will be created.
   T? get init => null;
 
-  /// This function replaces the build method. 
+  /// This function replaces the build method.
   Widget builder(BuildContext context, T controller);
 
   @override

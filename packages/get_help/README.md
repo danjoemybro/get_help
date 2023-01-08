@@ -72,9 +72,7 @@ Instead of this nested code, all you need to write is this:
 
 `GetxFutureController` (named with the _x_ to match `GetxController`) is a new controller type which adds a default implementation of awaiting futures based on [stacked](https://pub.dev/packages/stacked)'s `FutureViewModel`.
 
-## GetHookView
 
-Do you like flutter hooks? Well I do! It may well not be seen as best practice to use it within an app that already incorporates Getx but there are some benefits. Flutter hooks is especially good for creating and managing animation controllers as well as tab controllers. Any controller that requires vsync can be a pain to create within you controller. So don't: Use flutter hooks!
 
 ## Additional information
 

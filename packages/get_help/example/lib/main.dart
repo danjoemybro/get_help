@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
-import 'package:get_help/get_help.dart';
 
 import 'app/routes/app_pages.dart';
 
@@ -19,64 +18,96 @@ import 'app/routes/app_pages.dart';
 void main() {
   runApp(
     GetMaterialApp(
-      title: "Application",
+      title: "GetHelp Example",
       initialRoute: AppPages.INITIAL,
       getPages: AppPages.routes,
+      theme: ThemeData.dark(useMaterial3: true),
+      // themeMode: ThemeMode.dark,
     ),
   );
 }
 
-// All of the below files are in `main.dart` simply for example purposes.
-// Normally, the home binding, controller and view would be found in
-// `lib/app/modules/home'.
+// // All of the below files are in `main.dart` simply for example purposes.
+// // Normally, the home binding, controller and view would be found in
+// // `lib/app/modules/home'.
 
-/// A binding is a way of initialising controllers on page load, if using
-/// reactive state management, all you'll need to do is use state management.
-class HomeBinding extends Bindings {
-  @override
-  void dependencies() {
-    Get.lazyPut<HomeController>(
-      () => HomeController(),
-    );
-  }
-}
+// /// A binding is a way of initialising controllers on page load, if using
+// /// reactive state management, all you'll need to do is use state management.
+// class HomeBinding extends Bindings {
+//   @override
+//   void dependencies() {
+//     Get.lazyPut<HomeController>(() => HomeController());
+//     Get.lazyPut<TestController>(() => TestController());
+//   }
+// }
 
-class HomeController extends GetxFutureController {
-  late final Map<String, dynamic> data;
+// class TestController extends GetxController {
+//   late final Timer timer;
 
-  @override
-  Future<String?> futureToRun() async {
-    try {
-      // This is a simple simulation of waiting for an api call
-      await Future.delayed(const Duration(seconds: 2));
+//   int i = 0;
+//   @override
+//   void onInit() {
+//     timer = Timer.periodic(const Duration(seconds: 1), (_) {
+//       i++;
+//       update();
+//     });
+//     super.onInit();
+//   }
 
-      // this is a simulated response
-      data = {'dummy': 'data'};
+//   @override
+//   void onClose() {
+//     timer.cancel();
+//     super.onClose();
+//   }
+// }
 
-      // To simulate an error, just do this:
-      
-    } catch (e) {
-      return e.toString();
-    }
+// class HomeController extends GetxReactiveController {
+//   final testController = Get.find<TestController>();
+//   // late final Map<String, dynamic> data;
 
-    return null;
-  }
-}
+//   // @override
+//   // Future<String?> futureToRun() async {
+//   //   try {
+//   //     // This is a simple simulation of waiting for an api call
+//   //     await Future.delayed(const Duration(seconds: 2));
 
-class HomeView extends GetBuilderView<HomeController> {
-  const HomeView({super.key});
+//   //     // this is a simulated response
+//   //     data = {'dummy': 'data'};
 
-  @override
-  HomeController? get init => HomeController();
+//   //     // To simulate an error, just do this:
 
-  @override
-  bool get global => true;
+//   //   } catch (e) {
+//   //     return e.toString();
+//   //   }
 
-  @override
-  Widget builder(context, controller) {
-    return Scaffold(
-      appBar: AppBar(title: const Text('HomeView')),
-      body: Container(),
-    );
-  }
-}
+//   //   return null;
+//   // }
+
+//   @override
+//   List<GetxController> get listenTo => [testController];
+// }
+
+// class HomeView extends GetBuilderView<HomeController> {
+//   const HomeView({super.key});
+
+//   // @override
+//   // HomeController? get init => HomeController();
+
+//   // @override
+//   // bool get global => true;
+
+//   @override
+//   Widget builder(context, controller) {
+//     return Scaffold(
+//       appBar: AppBar(title: const Text('HomeView')),
+//       body: ListView(
+//         children: [
+//           ElevatedButton(
+//             onPressed: () => Get.toNamed(Routes.REACTIVE),
+//             child: const Text('Reactive View'),
+//           ),
+//         ],
+//       ),
+//     );
+//   }
+// }
