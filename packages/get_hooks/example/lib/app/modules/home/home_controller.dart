@@ -1,5 +1,9 @@
 import 'package:get/get.dart';
 
 class HomeController extends GetxController {
-  void onButtonPressed() {}
+  final counter = 0.obs;
+
+  void onButtonPressed() {
+    counter.value++;
+  }
 }
