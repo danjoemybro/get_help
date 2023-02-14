@@ -68,6 +68,15 @@ abstract class GetxFutureController extends GetxController {
   /// String when your future fails to show this within the UI
   Future<String?> futureToRun();
 
+  /// Call if you want to re-run the future to run. Is busy will be set to true.
+  Future<void> reload() async {
+    // _isBusy = true;
+    // update();
+    error = await futureToRun();
+    _isBusy = false;
+    update();
+  }
+
   @override
   Future<void> onInit() async {
     _isBusy = true;
