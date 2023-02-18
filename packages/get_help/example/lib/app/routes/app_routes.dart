@@ -8,6 +8,7 @@ abstract class Routes {
   static const PRIMARY = _Paths.REACTIVE + _Paths.PRIMARY;
   static const SECONDARY = _Paths.REACTIVE + _Paths.SECONDARY;
   static const FUTURE = _Paths.FUTURE;
+  static const PAGINATION = _Paths.PAGINATION;
 }
 
 abstract class _Paths {
@@ -17,4 +18,5 @@ abstract class _Paths {
   static const PRIMARY = '/primary';
   static const SECONDARY = '/secondary';
   static const FUTURE = '/future';
+  static const PAGINATION = '/pagination';
 }
