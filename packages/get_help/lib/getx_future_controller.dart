@@ -13,7 +13,7 @@ part of 'get_help.dart';
 ///
 /// To use it, add the required overridden method [futureToRun]. This method
 ///
-/// optionally call the fields [isBusy], [hasError] and [error] inside
+/// optionally call the fields [isLoading], [hasError] and [error] inside
 /// your view to make changes to your UI. Your page's state will update on
 /// ```dart
 /// Column(
@@ -28,9 +28,10 @@ part of 'get_help.dart';
 /// ),
 /// ```
 abstract class GetxFutureController extends GetxController {
-  bool _isBusy = true;
+  bool _isLoading = true;
+  bool _isReloading = false;
 
-  /// The [isBusy] bool defaults to false but will show as true when awaiting
+  /// The [isLoading] bool defaults to false but will show as true when awaiting
   /// the [futureToRun] function to complete. Once completed, this will simply
   /// toggle back to false.
   ///
@@ -47,11 +48,36 @@ abstract class GetxFutureController extends GetxController {
   ///   ],
   /// ),
   /// ```
-  bool get isBusy => _isBusy;
+  bool get isLoading => _isLoading;
 
-  /// Toggle Busy!
-  void setBusy([bool? isBusy]) {
-    _isBusy = isBusy ?? _isBusy;
+  /// The [isLoading] bool defaults to false but will show as true when awaiting
+  /// the [futureToRun] function to complete. Once completed, this will simply
+  /// toggle back to false.
+  ///
+  /// This can be used easily within your UI to create a loading state.
+  /// ```dart
+  /// Column(
+  ///   children: [
+  ///     if (controller.isBusy)
+  ///       const CircularProgressIndicator.adaptive()
+  ///     else if (controller.hasError)
+  ///       Text(controller.error!)
+  ///     else
+  ///       const Text('Content'),
+  ///   ],
+  /// ),
+  /// ```
+  bool get isReloading => _isReloading;
+
+  /// Toggle loading
+  void setLoading([bool? isLoading]) {
+    _isLoading = isLoading ?? !_isLoading;
+    update();
+  }
+
+  /// Toggle Reloading!
+  void setReloading([bool? isReloading]) {
+    _isReloading = isReloading ?? !_isReloading;
     update();
   }
 
@@ -70,18 +96,17 @@ abstract class GetxFutureController extends GetxController {
 
   /// Call if you want to re-run the future to run. Is busy will be set to true.
   Future<void> reload() async {
-    // _isBusy = true;
-    // update();
-    error = await futureToRun();
-    _isBusy = false;
+    setReloading(true);
     update();
+    error = await futureToRun();
+    setReloading(false);
   }
 
   @override
   Future<void> onInit() async {
-    _isBusy = true;
+    _isLoading = true;
     error = await futureToRun();
-    _isBusy = false;
+    _isLoading = false;
     update();
 
     super.onInit();
