@@ -27,7 +27,7 @@ part of 'get_help.dart';
 ///   ],
 /// ),
 /// ```
-abstract class GetxFutureController extends GetxController {
+abstract class GetxFutureController extends GetxReactiveController {
   bool _isLoading = true;
   bool _isReloading = false;
 

@@ -1,6 +1,6 @@
 part of 'get_help.dart';
 
-/// TODO Write Documentation
+/// The base reactive controller!
 abstract class GetxReactiveController extends GetxController {
   /// List of controllers to react to
   List<GetxController> get listenTo => [];
@@ -15,11 +15,11 @@ abstract class GetxReactiveController extends GetxController {
   }
 
   @override
-  void onClose() {
+  void dispose() {
     for (final controller in listenTo) {
       controller.removeListener(update);
     }
 
-    super.onClose();
+    super.dispose();
   }
 }
