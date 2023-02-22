@@ -69,6 +69,9 @@ abstract class GetxFutureController extends GetxController {
   /// ```
   bool get isReloading => _isReloading;
 
+  /// Use this to get if loading or reloading as a catch all
+  bool get isBusy => _isLoading || _isReloading;
+
   /// Toggle loading
   void setLoading([bool? isLoading]) {
     _isLoading = isLoading ?? !_isLoading;

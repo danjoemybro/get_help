@@ -4,7 +4,7 @@ import 'package:get_help/get_help.dart';
 import 'primary_controller.dart';
 
 class PrimaryView extends GetBuilderView<PrimaryController> {
-  const PrimaryView({Key? key}) : super(key: key);
+  const PrimaryView({super.key});
 
   @override
   Widget builder(BuildContext context, controller) {

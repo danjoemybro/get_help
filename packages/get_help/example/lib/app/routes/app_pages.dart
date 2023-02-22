@@ -1,5 +1,7 @@
 import 'package:get/get.dart';
 
+import '../modules/form/form_binding.dart';
+import '../modules/form/form_view.dart';
 import '../modules/future/future_binding.dart';
 import '../modules/future/future_view.dart';
 import '../modules/home/home_binding.dart';
@@ -52,6 +54,11 @@ class AppPages {
       name: _Paths.PAGINATION,
       page: () => const PaginationView(),
       binding: PaginationBinding(),
+    ),
+    GetPage(
+      name: _Paths.FORM,
+      page: () => const FormView(),
+      binding: FormBinding(),
     ),
   ];
 }

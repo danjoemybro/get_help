@@ -3,3 +3,31 @@ include: package:flutter_lints/flutter.yaml
 linter:
   rules:
     constant_identifier_names: false
+    # require_trailing_commas: true #! Only turn on for final formatting - otherwise it is very annoying.
+    use_named_constants: true
+    use_super_parameters: true
+    always_declare_return_types: true
+    use_enums: true
+    use_late_for_private_fields_and_variables: true
+    # avoid_annotating_with_dynamic: true #! Has Issues
+    # # avoid_bool_literals_in_conditional_expressions: true #! Has Issues
+    avoid_equals_and_hash_code_on_mutable_classes: true
+    avoid_escaping_inner_quotes: true
+    avoid_types_on_closure_parameters: true
+    avoid_void_async: true
+    directives_ordering: true
+    # # omit_local_variable_types: true #! Has Issues
+    prefer_asserts_with_message: true
+    # prefer_expression_function_bodies: true #! Has Issues
+    prefer_final_in_for_each: true
+    prefer_final_locals: true
+    prefer_if_elements_to_conditional_expressions: true
+    prefer_single_quotes: true #?Debateable
+    # sort_constructors_first: true #! Has Issues
+    unawaited_futures: true #? Could make issues?
+    unnecessary_await_in_return: true
+    # unnecessary_lambdas: true #? Can be an issue?
+    unnecessary_raw_strings: true
+    use_colored_box: true
+    use_decorated_box: true
+    use_raw_strings: true

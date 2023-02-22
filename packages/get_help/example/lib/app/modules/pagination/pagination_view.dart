@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 import 'pagination_controller.dart';
 
 class PaginationView extends GetView<PaginationController> {
-  const PaginationView({Key? key}) : super(key: key);
+  const PaginationView({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(

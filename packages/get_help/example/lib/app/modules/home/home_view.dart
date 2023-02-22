@@ -24,6 +24,11 @@ class HomeView extends GetBuilderView<HomeController> {
             onPressed: () => Get.toNamed(Routes.FUTURE),
             child: const Text('Future Page'),
           ),
+          const SizedBox(height: 12),
+          ElevatedButton(
+            onPressed: () => Get.toNamed(Routes.FORM),
+            child: const Text('Form Page'),
+          ),
         ],
       ),
     );

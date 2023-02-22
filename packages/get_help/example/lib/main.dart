@@ -18,7 +18,7 @@ import 'app/routes/app_pages.dart';
 void main() {
   runApp(
     GetMaterialApp(
-      title: "GetHelp Example",
+      title: 'GetHelp Example',
       initialRoute: AppPages.INITIAL,
       getPages: AppPages.routes,
       theme: ThemeData.dark(useMaterial3: true),

@@ -6,6 +6,8 @@ import 'package:get/get.dart';
 part 'get_builder_view.dart';
 part 'getx_future_controller.dart';
 part 'getx_reactive_controller.dart';
+part 'getx_pagination_controller.dart';
+part 'getx_form_controller.dart';
 
 // class _HomeController extends GetxFutureController {
 //   @override

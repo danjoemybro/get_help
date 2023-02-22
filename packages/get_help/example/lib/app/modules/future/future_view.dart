@@ -6,7 +6,7 @@ import 'package:get_help/get_help.dart';
 import 'future_controller.dart';
 
 class FutureView extends GetBuilderView<FutureController> {
-  const FutureView({Key? key}) : super(key: key);
+  const FutureView({super.key});
 
   @override
   Widget builder(context, controller) {

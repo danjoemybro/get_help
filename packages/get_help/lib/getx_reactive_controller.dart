@@ -7,7 +7,7 @@ abstract class GetxReactiveController extends GetxController {
 
   @override
   void onInit() {
-    for (var controller in listenTo) {
+    for (final controller in listenTo) {
       controller.addListener(update);
     }
 
@@ -16,7 +16,7 @@ abstract class GetxReactiveController extends GetxController {
 
   @override
   void onClose() {
-    for (var controller in listenTo) {
+    for (final controller in listenTo) {
       controller.removeListener(update);
     }
 

@@ -7,7 +7,7 @@ import 'package:get_help/get_help.dart';
 import 'reactive_controller.dart';
 
 class ReactiveView extends GetBuilderView<ReactiveController> {
-  const ReactiveView({Key? key}) : super(key: key);
+  const ReactiveView({super.key});
 
   @override
   Widget builder(BuildContext context, controller) {
