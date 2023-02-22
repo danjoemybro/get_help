@@ -1,3 +1,8 @@
 ## 0.0.1
 
-* TODO: Describe initial release.
+### Additions
+
+* GetBuilderView
+* GetxReactiveController
+* GetxFutureController
+* GetxFormController

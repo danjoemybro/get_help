@@ -6,8 +6,6 @@ import '../modules/future/future_binding.dart';
 import '../modules/future/future_view.dart';
 import '../modules/home/home_binding.dart';
 import '../modules/home/home_view.dart';
-import '../modules/pagination/pagination_binding.dart';
-import '../modules/pagination/pagination_view.dart';
 import '../modules/reactive/primary/primary_binding.dart';
 import '../modules/reactive/primary/primary_view.dart';
 import '../modules/reactive/reactive_binding.dart';
@@ -49,11 +47,6 @@ class AppPages {
       name: _Paths.FUTURE,
       page: () => const FutureView(),
       binding: FutureBinding(),
-    ),
-    GetPage(
-      name: _Paths.PAGINATION,
-      page: () => const PaginationView(),
-      binding: PaginationBinding(),
     ),
     GetPage(
       name: _Paths.FORM,
