@@ -1,16 +1,73 @@
-# example
+# `GetHelp!`
 
-A new Flutter project.
+`GetHelp!` is a set of helper widgets and classes which make using [get](https://pub.dev/packages/get) and [get_cli](https://pub.dev/packages/get_cli) easier.
 
-## Getting Started
+`GetHelp!` is also a great package for users of get which have experience using the [stacked](https://pub.dev/packages/stacked) architecture but want something lighter. `GetHelp!`'s emphasis on the use of `GetBuilderView`s means that a stacked persons MVVM with update() functions will be satisfied.
 
-This project is a starting point for a Flutter application.
+If you are using vscode, I have also included a handy snippets file.
 
-A few resources to get you started if this is your first Flutter project:
+## GetBuilderView
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+GetBuilderView is a great way to create a view with GetBuilder for get's simple state management system.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```dart
+class MyView extends GetBuilderView<MyController> {
+  const MyView({super.key});
+
+  @override
+  Widget builder(context, controller) {
+    return const Scaffold();
+  }
+}
+```
+
+**IMPORTANT:**
+This widget expects that you have already initialised your controller using a binding.
+If you are not using bindings or you don't need global controller creation, add the init method to your [GetBuilderView].
+
+You can also define the get builder to initialise local controllers by setting the [global] property to false, just the same as the [GetBuilder] widget.
+
+```dart
+class MyView extends GetBuilderView<MyController> {
+  const MyView({super.key});
+
+  /// Add the init method for initialising a Controller.
+  /// By default, init is set to null.
+  @override
+  MyController? get init => MyController();
+
+  /// Add the [global] method to turn off global controller creation.
+  /// [global] defaults to true
+  @override
+  bool get global => false;
+
+  @override
+  Widget builder(context, controller) {
+    return const Scaffold();
+  }
+}
+```
+
+Basically, GetBuilderView acts as a shorthand for this:
+
+```dart
+class MyView extends StatelessWidget {
+  const MyView({super.key});
+
+  @override
+  Widget build(context) {
+    return GetBuilder<MyController>(
+      init: MyController(),
+      builder: (controller) {
+        return const Scaffold();
+      },
+    );
+  }
+}
+```
+
+Instead of this nested code, all you need to write is this:
+
+## GetxFutureController
+
+`GetxFutureController` (named with the _x_ to match `GetxController`) is a new controller type which adds a default implementation of awaiting futures based on [stacked](https://pub.dev/packages/stacked)'s `FutureViewModel`.
