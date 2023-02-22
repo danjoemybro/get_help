@@ -1,3 +1,5 @@
+import 'package:example/main.dart';
+import 'package:flutter/material.dart';
 import 'package:get_help/get_help.dart';
 
 enum FormField { amount, title, description }
@@ -11,9 +13,13 @@ class FormController extends GetxFormController<FormField> {
   Map<FormField, String> get defaultValues =>
       {FormField.description: 'Lovers!'};
 
-  void onSubmitPressed() {
+  Future<void> onSubmitPressed() async {
     if (formKey.currentState!.validate()) {
-      // Form is valid
+      // Form is valid, show a snackbar
+      scaffoldMessengerKey.currentState?.clearSnackBars();
+      scaffoldMessengerKey.currentState?.showSnackBar(
+        const SnackBar(content: Text('Your form is valid!')),
+      );
     }
   }
 }

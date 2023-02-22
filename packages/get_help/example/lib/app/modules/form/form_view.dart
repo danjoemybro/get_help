@@ -13,56 +13,10 @@ class FormView extends GetView<FormController> {
         title: const Text('FormView'),
         centerTitle: true,
       ),
-      body: Form(
-        key: controller.formKey,
-        child: CustomScrollView(
-          slivers: [
-            SliverPadding(
-              padding: const EdgeInsets.all(20),
-              sliver: SliverList(
-                delegate: SliverChildBuilderDelegate(
-                  (context, index) {
-                    final field = controller.fields[index];
-                    return TextFormField(
-                      controller: controller.textControllers[field],
-                      focusNode: controller.focusNodes[field],
-                      validator: (value) {
-                        if (value == null || value.isEmpty) {
-                          return 'Field must not be empty';
-                        }
-                        return null;
-                      },
-                      decoration: InputDecoration(
-                        label: Text(field.name.capitalize!),
-                      ),
-                    );
-                  },
-                  childCount: controller.fields.length,
-                ),
-              ),
-            ),
-            SliverFillRemaining(
-              hasScrollBody: false,
-              child: Container(
-                alignment: Alignment.bottomCenter,
-                padding: EdgeInsets.only(
-                        bottom: MediaQuery.of(context).padding.bottom) +
-                    const EdgeInsets.all(30),
-                child: ElevatedButton(
-                  onPressed: controller.onSubmitPressed,
-                  child: const Text('Submit'),
-                ),
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('FormView'),
-        centerTitle: true,
+      floatingActionButton: FloatingActionButton.extended(
+        onPressed: controller.onSubmitPressed,
+        label: const Text('Submit'),
+        icon: const Icon(Icons.done),
       ),
       body: Form(
         key: controller.formKey,
@@ -71,14 +25,20 @@ class FormView extends GetView<FormController> {
           itemCount: controller.fields.length,
           itemBuilder: (context, index) {
             final field = controller.fields[index];
-            return TextFormField(
-              controller: controller.textControllers[field],
-              focusNode: controller.focusNodes[field],
-              validator: (value) {
-                return 'Nope';
-              },
-              decoration: InputDecoration(
-                label: Text(field.name.capitalize!),
+            return Padding(
+              padding: const EdgeInsets.only(bottom: 12),
+              child: TextFormField(
+                controller: controller.textControllers[field],
+                focusNode: controller.focusNodes[field],
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Field must not be empty';
+                  }
+                  return null;
+                },
+                decoration: InputDecoration(
+                  label: Text(field.name.capitalize!),
+                ),
               ),
             );
           },

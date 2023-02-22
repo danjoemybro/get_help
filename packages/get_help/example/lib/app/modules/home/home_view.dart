@@ -12,19 +12,23 @@ class HomeView extends GetBuilderView<HomeController> {
   Widget builder(context, controller) {
     return Scaffold(
       appBar: AppBar(title: const Text('HomeView')),
-      body: ListView(
+      body: GridView(
+        gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+          maxCrossAxisExtent: 280,
+          childAspectRatio: 3,
+          crossAxisSpacing: 10,
+          mainAxisSpacing: 10,
+        ),
         padding: const EdgeInsets.all(20),
         children: [
           ElevatedButton(
             onPressed: () => Get.toNamed(Routes.REACTIVE),
             child: const Text('Reactive Page'),
           ),
-          const SizedBox(height: 12),
           ElevatedButton(
             onPressed: () => Get.toNamed(Routes.FUTURE),
             child: const Text('Future Page'),
           ),
-          const SizedBox(height: 12),
           ElevatedButton(
             onPressed: () => Get.toNamed(Routes.FORM),
             child: const Text('Form Page'),
