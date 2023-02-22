@@ -71,13 +71,3 @@ Instead of this nested code, all you need to write is this:
 ## GetxFutureController
 
 `GetxFutureController` (named with the _x_ to match `GetxController`) is a new controller type which adds a default implementation of awaiting futures based on [stacked](https://pub.dev/packages/stacked)'s `FutureViewModel`.
-
-
-
-## Additional information
-
-> TODO: Tell users more about the package: where to find more information, how to
-> contribute to the package, how to file issues, what response they can expect
-> from the package authors, and more.
-
-If you do need someone to talk to about your mental health, I highly recommend you check out [checkpointorg.com](https://checkpointorg.com/global/) for more information about people and organisations in your area you can talk to. Your mental health is important. ❤️
